@@ -1,16 +1,17 @@
 body {
   margin: 0;
-  padding: 80px 120px;
+  padding: 80px 80px;
   background: #F2EDEB;
   font-family: "Libre Bodoni", serif;
   line-height: 1.8;
   font-size: 20px;
 overflow-x: hidden;
 overflow-y: auto;
+padding-top:50px;
 }
 
 .article {
-  max-width: 700px;
+  max-width: 850px;
   cursor: pointer;
   font-family:"Instrument Serif";
   color:#8D5B4C;
@@ -27,6 +28,7 @@ overflow-y: auto;
   width:100%;
   height:50px;
   background:#8D5B4C;
+    z-index:1000;
 }
 .back{
   position:absolute;
@@ -59,37 +61,27 @@ svg * {
 * {
   cursor: url("img/brownbmouse.png") 16 16, auto;
 }
-.clickhint {
-  position: fixed;
-  top: 200px;
-  right: 200px;
-  width: 200px;
-  z-index: 999;
-
+.clickhint{
+  display:block;
+  margin:50px auto;
+  width:200px;
   animation: float 3s ease-in-out infinite;
-  transition: opacity 0.8s ease;
+  margin-left:65%;
 }
 
-/* 上下浮动动画 */
+
 @keyframes float {
   0%   { transform: translateY(0px); }
   50%  { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* 消失状态 */
-.click-hint.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-.letter {
-  display: inline-block;
-  transition: transform 1.5s ease, opacity 1.5s ease;
+
+@media (max-width:768px){
+
+.article{
+  max-width:92vw;
+  padding:0 20px;
 }
 
-
-
-.clickhint.hide {
-  opacity: 0;
-  pointer-events: none;
 }

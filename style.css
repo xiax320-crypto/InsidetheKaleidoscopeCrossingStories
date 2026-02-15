@@ -73,14 +73,14 @@ html, body {
 }
 
 .title-container h1 {
-    font-size: 90px;
+    font-size: 80px;
     margin: 0;
     font-weight: 500;
     
 }
 
 .title-container h2 {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 400;
     margin: 0%;
 }
@@ -91,4 +91,20 @@ button,
 body,
 svg * {
   cursor: url("img/brownymouse.png"), auto;
+}
+@media (max-width: 768px){
+
+  h1{
+    font-size: 12vw;
+    line-height: 1.05;
+  }
+
+  h2{
+    font-size: 7vw;
+  }
+
+  h3{
+    font-size: 5vw;
+  }
+
 }
