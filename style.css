@@ -49,8 +49,8 @@ html, body {
   margin: 0 auto;
     position: absolute;
   right:150px;
-    top:70%;
-  transform:translateY(-70%);
+    top:66%;
+  transform:translateY(-66%);
 }
 .circle-link:hover {
   opacity: 0.7;
@@ -68,7 +68,7 @@ html, body {
 }
 .copyright{
     position: absolute;
-    bottom: 45px;
+    bottom: 40px;
   left: 40px;
   text-align: left;
   font-size: 35px;
