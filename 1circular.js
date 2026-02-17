@@ -31,4 +31,3 @@ topbar.addEventListener("mouseenter", () => {
 topbar.addEventListener("mouseleave", () => {
   maskEnabled = true;
 });
-

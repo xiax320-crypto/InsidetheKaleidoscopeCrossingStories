@@ -14,16 +14,18 @@
 <body>
 
     <header class="top-bar">
-        <div class="headset-icon">
-            <img src="img/blacksound.png" class="sound" alt="sound">
-        </div>
+
+<audio id="bgm" loop>
+  <source src="audio/BGM.mp3" type="audio/mpeg">
+</audio>
+
+<img src="img/blacksound.png" id="soundBtn" class="sound">
+
     </header>
 
     <main class="content">
-        <div class="info-row">
-            <div class="designed-by">Designed by<br>Annie</div>
-            <div class="date">2026/2</div>
-        </div>
+      
+        
 
   <a href="kaleidoscope.html" class="circle-link">
   <div class="center-circle"></div>
@@ -31,12 +33,19 @@
 
 
         <div class="title-container">
-            <h1>Crossing Stories</h1>
-            <h2>Inside the Kaleidoscope</h2>
+            <h1>Inside the Kaleidoscope
+            <br>Crossing Stories</h1>
         </div>
     </main>
+<footer class="copyright">
+2026 Feb. Design by Annie Xia. BGM by Victor Fang.
+
+</footer>
 
     <div class="absolute-frame"></div>
 
+<script src="main.js"></script>
+
+<script src="bgm.js"></script>
 </body>
 </html>

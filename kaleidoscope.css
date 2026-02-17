@@ -110,3 +110,11 @@ body,
 svg * {
   cursor: url("img/brownbmouse.png"), auto;
 }
+.sound{
+  position:fixed;
+  top:12px;
+  right:75px;
+  width:29px;
+  cursor:pointer;
+  z-index:999;
+}

@@ -10,4 +10,3 @@ if (centerCircle) {
     e.stopPropagation();
   });
 }
-

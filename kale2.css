@@ -89,7 +89,6 @@ body{
   cursor: pointer;
 }
 
-
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(-90deg);
