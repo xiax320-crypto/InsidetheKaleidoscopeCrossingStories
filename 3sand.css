@@ -1,34 +1,26 @@
-body {
+* {
   margin: 0;
-  padding: 80px 80px;
-  background: #F2EDEB;
-  font-family: "Libre Bodoni", serif;
-  line-height: 1.8;
-  font-size: 20px;
-overflow-x: hidden;
-overflow-y: auto;
-padding-top:50px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.article {
-  max-width: 850px;
-  cursor: pointer;
-  font-family:"Instrument Serif";
-  color:#8D5B4C;
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #8D5B4C;
+  font-family: "Instrument Serif";
+  cursor: none;
 }
 
-.letter {
-  display: inline-block;
-  transition: transform 1.5s ease, opacity 1.5s ease;
-}
-.topbar{
+.top-bar{
   position:fixed;
   top:0;
   left:0;
   width:100%;
   height:50px;
-  background:#8D5B4C;
-    z-index:1000;
+  background:#31150c;
+    z-index: 10;
 }
 .back{
   position:absolute;
@@ -50,38 +42,36 @@ padding-top:50px;
   font-size:22px;
   width: 35px;
 }
-a,
-button,
-.center-circle,
-.text-ring,
-body,
-svg * {
-  cursor: url("img/brownbmouse.png"), auto;
+.text-layer {
+  position: absolute;
+  inset: 0;
+  padding: 120px;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #F2EDEB;
+  font-family: "Libre+Bodoni" ;
+  font-style: italic;
 }
-* {
-  cursor: url("img/brownbmouse.png") 16 16, auto;
+.mask-layer {
+  position: fixed;
+  inset: 0;
+  background: #3e221a;;
+
 }
-.clickhint{
-  display:block;
-  margin:50px auto;
-  width:200px;
-  animation: float 3s ease-in-out infinite;
-  margin-left:65%;
+.text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;      
+  padding: 120px;
+    top: 50px; 
+
+  overflow-y: auto;   
+  overflow-x: hidden;
 }
-
-
-@keyframes float {
-  0%   { transform: translateY(0px); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-
-@media (max-width:768px){
-
-.article{
-  max-width:92vw;
-  padding:0 20px;
-}
-
+.mask-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;   
 }

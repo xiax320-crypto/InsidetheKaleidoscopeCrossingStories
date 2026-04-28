@@ -1,69 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
+const mask = document.querySelector(".mask-layer");
+const topbar = document.querySelector(".top-bar");
 
-  const article = document.getElementById("article");
-  const clickHint = document.getElementById("clickHint");
+let maskEnabled = true;
 
-  if(!article) return;   
+document.addEventListener("mousemove", (e) => {
+  if (!maskEnabled) return;
 
-  let isBlown = false;
+  const x = e.clientX;
+  const y = e.clientY - 50;
 
-  function splitText(element) {
+  const gradient = `
+    radial-gradient(
+      circle 400px at ${x}px ${y}px,
+      transparent 0%,
+      transparent 40%,
+      black 100%
+    )
+  `;
 
-    const nodes = element.querySelectorAll("h1, h2, h3, h4, p");
-
-    nodes.forEach(node => {
-
-      const text = node.innerText;
-      node.innerHTML = "";
-
-      text.split("").forEach(char => {
-
-        const span = document.createElement("span");
-        span.classList.add("letter");
-        span.textContent = char === " " ? "\u00A0" : char;
-        node.appendChild(span);
-
-      });
-
-    });
-
-  }
-
-  splitText(article);
-
-
-  article.addEventListener("click", () => {
-
-    const letters = document.querySelectorAll(".letter");
-    isBlown = !isBlown;
-
-    letters.forEach(letter => {
-
-      if (isBlown) {
-
-        const x = (Math.random() - 0.5) * 1000;
-        const y = (Math.random() - 0.5) * 600;
-        const rotate = (Math.random() - 0.5) * 720;
-
-        letter.style.transform =
-          `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
-
-        letter.style.opacity = "0";
-
-      } else {
-
-        letter.style.transform = "translate(0,0) rotate(0deg)";
-        letter.style.opacity = "1";
-
-      }
-
-    });
-
-    if(clickHint){
-      clickHint.classList.add("hide");
-    }
-
-  });
-
+  mask.style.maskImage = gradient;
+  mask.style.webkitMaskImage = gradient;
 });
 
+topbar.addEventListener("mouseenter", () => {
+  maskEnabled = false;
+  mask.style.maskImage = "none";
+  mask.style.webkitMaskImage = "none";
+});
+
+topbar.addEventListener("mouseleave", () => {
+  maskEnabled = true;
+});
